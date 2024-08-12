@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <%- include('partials/nav') %>
+  <h1>Full Menu</h1>
+  <p><strong>Restaurant:</strong> <%= RESTAURANT.name %></p>
+  <p><strong>Address:</strong> <%= RESTAURANT.address %></p>
+  <p><strong>Phone:</strong> <%= RESTAURANT.phone %></p>
+  
+  <% RESTAURANT.menu.forEach(item => { %>
+    <div class="menu-item">
+      <h2><%= item.name %> - $<%= item.price.toFixed(2) %></h2>
+      <p><strong>Category:</strong> <%= item.category %></p>
+      <p><strong>Rating:</strong> <%= item.rating %> stars</p>
+      <p><strong>Details:</strong> <%= item.details %></p>
+    </div>
+  <% }); %>
+</body>
+</html>
+
